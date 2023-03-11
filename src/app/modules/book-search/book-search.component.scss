@@ -1,0 +1,48 @@
+.book-search-page {
+  &__container {
+    padding: 20px;
+  }
+  &__title {
+    color: #0F4C81;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__search-input {
+    margin: 30px auto;
+    width: 90%;
+  }
+  &__search-results {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px 20px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    &_item {
+      max-width: 500px;
+    }
+  }
+  &__loading-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  &__empty-results {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    p {
+      font-size: 32px;
+      color: #0F4C81;
+      font-weight: bold;
+    }
+  }
+}

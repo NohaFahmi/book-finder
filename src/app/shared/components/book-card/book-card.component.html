@@ -1,1 +1,14 @@
-<p>book-card works!</p>
+<div class="book-card__wrapper" *ngIf="book">
+  <div class="book-card__image">
+    <img [src]="book.volumeInfo.imageLinks.medium ? book.volumeInfo.imageLinks.medium : book.volumeInfo.imageLinks.thumbnail" [alt]="book.volumeInfo.title" />
+  </div>
+  <div class="book-card__content">
+    <h3 class="book-card__title">{{book.volumeInfo.title}}</h3>
+    <p class="book-card__author" *ngFor="let author of book.volumeInfo.authors; let last = last">
+      <span>By:</span> {{author}} {{book.volumeInfo.authors.length > 1 ? last ? ',' : '' : ''}}
+    </p>
+    <p class="book-card__publisher"><span>Published By:</span> {{book.volumeInfo.publisher}}</p>
+    <p class="book-card__description">{{book.volumeInfo.description}}</p>
+    <a class="book-card__link" pButton [href]="book.volumeInfo.previewLink" target="_blank">See This Book</a>
+  </div>
+</div>

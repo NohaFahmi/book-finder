@@ -1,0 +1,38 @@
+.book-search-input__wrapper {
+  display: flex;
+  flex-direction: row;
+  .p-input-icon-left {
+    width: 100%;
+    input {
+      width: 100%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      color: #333333;
+      border-color: #0F4C81;
+      border-right: none;
+      &:hover {
+        border-color: #0F4C81;
+      }
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+
+    }
+  }
+  .search-btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #0F4C81;
+    border: none;
+    color: #F5F5F5;
+    &:hover {
+      background-color: #0F4C81;
+      box-shadow: none;
+    }
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+}

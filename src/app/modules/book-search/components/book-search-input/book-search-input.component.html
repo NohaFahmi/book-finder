@@ -1,1 +1,9 @@
-<p>book-search-input works!</p>
+<div class="book-search-input__wrapper">
+  <div class="p-input-icon-left">
+    <i class="pi pi-search"></i>
+    <input type="text" pInputText [formControl]="bookSearchKeyword"
+           placeholder="Search">
+</div>
+  <button pButton type="button" label="Search" class="search-btn"
+  (click)="onSearch()" [disabled]="bookSearchKeyword.invalid"></button>
+</div>

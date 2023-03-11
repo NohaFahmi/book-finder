@@ -1,1 +1,19 @@
-<p>book-search works!</p>
+<div class="book-search-page__container">
+  <h1 class="book-search-page__title">book finder</h1>
+  <div class="book-search-page__search-input">
+    <app-book-search-input (onSearching)="onSearchBooks($event)"></app-book-search-input>
+  </div>
+  <div class="book-search-page__loading-content" *ngIf="isLoading">
+    <p-skeleton shape="square" width="500px" height="340px"></p-skeleton>
+    <p-skeleton shape="square" width="500px" height="340px"></p-skeleton>
+  </div>
+  <div class="book-search-page__search-results" *ngIf="!isLoading">
+    <div class="book-search-page__search-results_item" *ngFor="let book of listOfBooks;">
+      <app-book-card [book]="book"></app-book-card>
+    </div>
+    <div class="book-search-page__empty-results"  *ngIf="listOfBooks.length === 0">
+      <i class="pi pi-search" style="font-size: 6rem"></i>
+      <p>No results found</p>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BookCardComponent } from './book-card.component';
+import {ButtonModule} from "primeng/button";
 
 
 
@@ -8,8 +9,12 @@ import { BookCardComponent } from './book-card.component';
   declarations: [
     BookCardComponent
   ],
-  imports: [
-    CommonModule
-  ]
+  exports: [
+    BookCardComponent
+  ],
+    imports: [
+        CommonModule,
+        ButtonModule
+    ]
 })
 export class BookCardModule { }
