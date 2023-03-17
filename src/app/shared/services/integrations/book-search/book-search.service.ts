@@ -14,7 +14,7 @@ export class BookSearchService {
 
   searchBooks(query: string): Promise<BookSearchResult> {
     return new Promise((resolve, reject) => {
-      lastValueFrom(this.httpClient.get(`${environment.serviceUrls.googleAPI}volumes?q=${query}&key=${environment.googleAPIKey}`)).then((books) => {
+      lastValueFrom(this.httpClient.get(`${environment.serviceUrls.googleAPI}volumes?q=${query}&key=${environment.googleAPIKey}&langRestrict='en'`)).then((books) => {
         resolve(books as BookSearchResult);
       }).catch((error) => {
         reject(error);

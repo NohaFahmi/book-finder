@@ -7,7 +7,7 @@ import {BookInterface} from "../../interfaces/book.interface";
   styleUrls: ['./book-card.component.scss']
 })
 export class BookCardComponent {
-  @Input()  book?: BookInterface;
+  @Input() book?: BookInterface;
   constructor() {
   }
 }

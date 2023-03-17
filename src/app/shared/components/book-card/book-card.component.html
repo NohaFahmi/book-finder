@@ -4,8 +4,11 @@
   </div>
   <div class="book-card__content">
     <h3 class="book-card__title">{{book.volumeInfo.title}}</h3>
-    <p class="book-card__author" *ngFor="let author of book.volumeInfo.authors; let last = last">
-      <span>By:</span> {{author}} {{book.volumeInfo.authors.length > 1 ? last ? ',' : '' : ''}}
+    <p class="book-card__author">
+      <span>By:</span>
+      <span  *ngFor="let author of book.volumeInfo.authors; let last = last">
+        {{author}}  {{book.volumeInfo.authors.length > 1 ? last ? ',' : '' : ''}}
+      </span>
     </p>
     <p class="book-card__publisher"><span>Published By:</span> {{book.volumeInfo.publisher}}</p>
     <p class="book-card__description">{{book.volumeInfo.description}}</p>

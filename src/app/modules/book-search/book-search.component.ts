@@ -9,7 +9,7 @@ import {BookInterface} from "../../shared/interfaces/book.interface";
 })
 export class BookSearchComponent implements OnInit {
 
-  listOfBooks: BookInterface[] = [];
+  listOfBooks?: BookInterface[];
   isLoading: boolean = false;
   constructor(private bookSearchService: BookSearchService) {
 
@@ -21,7 +21,7 @@ export class BookSearchComponent implements OnInit {
   onSearchBooks(keyword: string) {
     this.isLoading = true;
     this.bookSearchService.searchBooks(keyword).then((res) => {
-      this.listOfBooks = res.items;
+      this.listOfBooks = res.items ? res.items : [];
     }).catch((err) => {
       console.log(err);
     }).finally(() => {

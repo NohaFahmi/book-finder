@@ -13,6 +13,8 @@ export class BookSearchInputComponent {
   }
 
   onSearch() {
-    this.onSearching.emit(this.bookSearchKeyword.value)
+    if(this.bookSearchKeyword.valid) {
+      this.onSearching.emit(this.bookSearchKeyword.value)
+    }
   }
 }

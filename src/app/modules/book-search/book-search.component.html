@@ -7,11 +7,11 @@
     <p-skeleton shape="square" width="500px" height="340px"></p-skeleton>
     <p-skeleton shape="square" width="500px" height="340px"></p-skeleton>
   </div>
-  <div class="book-search-page__search-results" *ngIf="!isLoading">
+  <div class="book-search-page__search-results" *ngIf="!isLoading && listOfBooks">
     <div class="book-search-page__search-results_item" *ngFor="let book of listOfBooks;">
       <app-book-card [book]="book"></app-book-card>
     </div>
-    <div class="book-search-page__empty-results"  *ngIf="listOfBooks.length === 0">
+    <div class="book-search-page__empty-results" *ngIf="listOfBooks.length === 0">
       <i class="pi pi-search" style="font-size: 6rem"></i>
       <p>No results found</p>
     </div>

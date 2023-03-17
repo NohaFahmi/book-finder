@@ -2,7 +2,7 @@
   <div class="p-input-icon-left">
     <i class="pi pi-search"></i>
     <input type="text" pInputText [formControl]="bookSearchKeyword"
-           placeholder="Search">
+           placeholder="Search" (keyup.enter)="onSearch()">
 </div>
   <button pButton type="button" label="Search" class="search-btn"
   (click)="onSearch()" [disabled]="bookSearchKeyword.invalid"></button>
